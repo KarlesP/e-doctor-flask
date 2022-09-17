@@ -5,7 +5,7 @@
 3. Execute `docker build --tag e-doc-flask .` and `docker run -p 5000:5000 -d e-doc-flask`
 4. Open a browser and make sure that the service started succesfully or open POSTMAN and test the API
 
-### Helpful docker commandsr
-Stop containers `docker stop $(docker ps -a -q)`
-Remove dockers `docker rm $(docker ps -a -q)`
-Clear cache `docker system prune -a`
+### Helpful docker commands
+* Stop containers `docker stop $(docker ps -a -q)`
+* Remove dockers `docker rm $(docker ps -a -q)`
+* Clear cache `docker system prune -a`
