@@ -3,8 +3,9 @@ from flask import Flask, request, jsonify, render_template
 app = Flask(__name__)
 app._static_folder = 'templates'
 
-@app.route("/")
-def hello_world():
+
+@app.route("/", methods=['GET'])
+def home():
     return render_template('index.html', message="This is a Flask App containerised with Docker")
 
 
