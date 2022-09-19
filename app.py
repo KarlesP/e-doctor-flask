@@ -6,7 +6,7 @@ app._static_folder = 'templates'
 
 @app.route("/", methods=['GET'])
 def home():
-    return render_template('index.html', message="This is a Flask App containerised with Docker")
+    return render_template('index.html')
 
 
 @app.route('/data', methods=['POST'])
