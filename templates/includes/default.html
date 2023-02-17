@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>E-Doctor</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <noscript>
+      <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/noscript.css') }}" />
+    </noscript>
+  </head>
+  <body class="is-preload">
+    {% block body%}
+    <header id="header">
+      <a href="index.html" class="title">E-doctor</a>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/testServices" class="active">Test Service</a></li>
+        </ul>
+      </nav>
+    </header>
+  <div id="wrapper">
+  
+    <!-- Main -->
+    <section id="main" class="wrapper">
+      <div class="inner">
+        <h1 class="major">Test our service as a patient
+        </h1>
+  
+  
+        <!-- Form -->
+        <section>
+  
+          <h2>Symptom Checker</h2>
+  <form name="SymptomForm" id="SymForm" method="POST" action=/disease_predict>
+    <div class="head">
+      
+    </div>
+    <div class="row gtr-uniform">
+      <div class="col-6 col-12-xsmall">
+        <label for="Symptom1" align="left">Symptom1</label>
+        <input type="text" list="symp" multiple="multiple" class="form-control" name="Symptom1">
+        <datalist id="symp">
+          {% for symp in symptoms %}
+          <option value="{{symp}}">{{symp}}</option>
+          {% endfor %}
+        </datalist>
+      </div>
+      <div class="col-6 col-12-xsmall">
+        <label for="Symptom2" align="left">Symptom2</label>
+        <input type="text" list="symp" multiple="multiple" class="form-control" name="Symptom2">
+        <datalist id="symp">
+          {% for symp in symptoms %}
+          <option value="{{symp}}">{{symp}}</option>
+          {% endfor %}
+        </datalist>
+      </div>
+      <div class="col-6 col-12-xsmall">
+        <label for="Symptom3" align="left">Symptom3</label>
+        <input type="text" list="symp" multiple="multiple" class="form-control" name="Symptom3">
+        <datalist id="symp">
+          {% for symp in symptoms %}
+          <option value="{{symp}}">{{symp}}</option>
+          {% endfor %}
+        </datalist>
+      </div>
+      <div class="col-6 col-12-xsmall">
+        <label for="Symptom4" align="left">Symptom4</label>
+        <input type="text" list="symp" multiple="multiple" class="form-control" name="Symptom4">
+        <datalist id="symp">
+          {% for symp in symptoms %}
+          <option value="{{symp}}">{{symp}}</option>
+          {% endfor %}
+        </datalist>
+      </div>
+          <div class="col-12">
+            <label for="Symptom5" align="left">Symptom5</label>
+            <input type="text" list="symp" multiple="multiple" class="form-control" name="Symptom5">
+            <datalist id="symp">
+              {% for symp in symptoms %}
+              <option value="{{symp}}">{{symp}}</option>
+              {% endfor %}
+            </datalist>
+          </div>
+          <ul class="actions">
+    <button type="submit"  class="btn btn-primary" class="primary" name=form>Check</button>
+    </ul>
+</form>
+
+</div>
+<script>
+
+  
+function openTab(tabName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(tabName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+</script>
+
+    {% endblock %}
+  </body>
+</html>
